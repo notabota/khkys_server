@@ -4,6 +4,8 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from flask import Flask, Response
+import matplotlib
+matplotlib.use('TKAgg')
 
 # Use a service account.
 cred = credentials.Certificate('khkys22-firebase-adminsdk-gxlc0-aea51764b0.json')
@@ -34,12 +36,12 @@ for url in cam_urls:
                                    source=url,
                                    traced_model='traffic_object/traced_model.pt', update_cloud=True))
 
+
 @flask_app.route('/cam/<id>')
 def video_feed(id):
     # print(yolo_opt[int(id)].source)
     return Response(obj.detect(yolo_opt[int(id)], db),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
-
 
 # flask_app.run(host='127.0.0.1', debug=True)
 
