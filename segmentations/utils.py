@@ -6,7 +6,7 @@ from PIL import Image
 import torch
 import matplotlib
 
-matplotlib.use('tkagg')
+matplotlib.use('agg')
 plt.style.use('ggplot')
 
 def create_class_mask(img, color_map, is_normalized_img=True, is_normalized_map=False, show_masks=False):

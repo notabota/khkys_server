@@ -4,8 +4,6 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from flask import Flask, Response
-import matplotlib
-matplotlib.use('TKAgg')
 
 # Use a service account.
 cred = credentials.Certificate('khkys22-firebase-adminsdk-gxlc0-aea51764b0.json')
