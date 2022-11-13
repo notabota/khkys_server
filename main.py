@@ -41,7 +41,7 @@ def video_feed(id):
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
-flask_app.run(host='127.0.0.1', debug=True)
+# flask_app.run(host='127.0.0.1', debug=True)
 
 # import pafy
 #
